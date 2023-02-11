@@ -4,3 +4,4 @@
 .terraform.*.hcl
 **/terraform.tfstate
 **/terraform.tfstate.backup
+**/nginx-plan.xyz
