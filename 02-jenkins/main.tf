@@ -82,7 +82,7 @@ resource "aws_security_group" "jenkins_ecs_service_sg" {
   }
   ingress {
     from_port = 0
-    protocol  = "tcp"
+    protocol  = "-1"
     to_port   = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -102,7 +102,7 @@ resource "aws_ecs_service" "jenkins_service" {
   desired_count = 1
   launch_type = "FARGATE"
   network_configuration {
-    subnets = ["subnet-007684c01a11622dd"]
+    subnets = ["subnet-0056ce3aa528da98c"]
     security_groups = [aws_security_group.jenkins_ecs_service_sg.id]
     assign_public_ip = true
   }
