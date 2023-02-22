@@ -23,3 +23,8 @@ variable "subnet_cidr_block" {
   type = list(string)
   default = ["10.0.1.0/26","10.0.0.0/28"]
 }
+
+variable "lb_name" {
+  type = string
+  default = "nginx-lb"
+}

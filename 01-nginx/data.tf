@@ -5,3 +5,10 @@ data "aws_availability_zones" "availability" {
 #data "aws_ami" "ubuntu" {
 #  owners = []
 #}
+
+data "aws_subnet_ids" "nginx_subnet_ids" {
+  vpc_id = aws_vpc.nginx_vpc.id
+  tags = {
+    Name = "nginx*"
+  }
+}
